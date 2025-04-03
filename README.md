@@ -12,7 +12,7 @@ The goal is to solve LeetCode problems in order, as presented in the book, and d
 
 ---
 
-## 🧠 Purpose
+## Purpose
 
 - Practice and review algorithm problems in a structured, progressive way
 - Improve Python coding efficiency and problem-solving skills
@@ -20,7 +20,7 @@ The goal is to solve LeetCode problems in order, as presented in the book, and d
 
 ---
 
-## 📁 Structure
+## Structure
 
 Each folder corresponds to a chapter or topic from the book:
 
@@ -35,7 +35,7 @@ Each problem includes:
 
 ---
 
-## 📚 Book Info
+## Book Info
 
 - Title: 파이썬 알고리즘 인터뷰 (Python Algorithm Interview)
 - Author: 박상길 (Sangkil Park)
