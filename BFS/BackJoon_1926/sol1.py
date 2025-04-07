@@ -3,40 +3,39 @@ from collections import deque
 # input = sys.stdin.readline
 # import sys
 sys.stdin = open('C:\\Users\\Lee\\Desktop\\algorithm\\BFS\\BackJoon_1926\\input.txt', 'r')
-
-N = int(input())
-map = [list(map(int, input().strip())) for _ in range(N)]
-ch = [[False] * N for _ in range(N)]
-each = 0
-result = []
+n, m = map(int, input().split())
+map = [list(map(int, input().split())) for _ in range(n)]
+ch = [[False] * m for _ in range(n)]
 
 dy = [0, 1, 0, -1]
 dx = [1, 0, -1, 0]
 
-def dfs(y, x):
-    global each
-    each += 1
-    for k in range(4):
-        ny = y + dy[k]
-        nx = x + dx[k]
-        if 0<=ny<N and 0<=nx<N:
-            if map[ny][nx] == 1 and ch[ny][nx] == False:
-                ch[ny][nx] = True
-                dfs(ny, nx)   
+def bfs(y, x):
+    q = deque()
+    q.append((y, x))
+    r = 1
+    while q:
+        ey, ex = q.popleft()
+        for k in range(4):
+            ny = ey + dy[k]
+            nx = ex + dx[k]
 
+            if 0<=ny<n and 0<=nx<m:
+                if map[ny][nx] == 1 and ch[ny][nx] == False:
+                    ch[ny][nx] = True
+                    r += 1
+                    q.append((ny, nx))
 
+    return r
 
-
-for j in range(N):
-    for i in range(N):
+cnt = 0
+maxv = 0
+for j in range(n):
+    for i in range(m):
         if map[j][i] == 1 and ch[j][i] == False:
             ch[j][i] = True
-            each = 0
-            dfs(j, i)
-            result.append(each)
+            cnt += 1
+            maxv = max(maxv, bfs(j, i))
 
-
-print(len(result))
-
-for i in result:
-    print(i)
+print(cnt)
+print(maxv)
