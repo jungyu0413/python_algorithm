@@ -18,7 +18,6 @@ dx = [1, 0, -1, 0]
 q = deque()
 
 def bfs(y, x):
-    rs = 1
     q.append((y, x))
     ch[y][x] = True
     while q:
@@ -29,7 +28,6 @@ def bfs(y, x):
             if 0<=ny<n and 0<=nx<m:
                 if map[ny][nx] == 1 and ch[ny][nx] == False:
                     ch[ny][nx] = True
-                    rs += 1
                     map[ny][nx] = map[ey][ex] + 1
                     q.append((ny, nx))
                     if ny == n-1 and nx == m-1:
