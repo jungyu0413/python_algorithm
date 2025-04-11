@@ -2,7 +2,7 @@
 
 This repository is a curated collection of algorithm solutions based on the book  
 **[파이썬 알고리즘 인터뷰 (Python Algorithm Interview)](https://product.kyobobook.co.kr/detail/S000001932748)**  
-by 박상길.
+by 박상길
 
 The goal is to solve LeetCode problems in order, as presented in the book, and document each solution with clean code and explanations.
 
